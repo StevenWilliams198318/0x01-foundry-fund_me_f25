@@ -1,0 +1,19 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+test = "test"                                                                    # This line specifies the test directory
+remappings = ["@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts"]
+
+[profile.default.testing]
+match_path = "test/**/*.sol"
+# ffi = true                   # will allow foundry to run commands directly on my local machine
+
+fs_permissions = [{ access = "read", path = "./broadcast" }]
+
+# See more possible config options to add here:
+# https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+
+# [rpc_endpoints]
+# sepolia = "${SEPOLIA_RPC_URL}" // A .env file is required, with the RPC URL,
+# /And 'vm.createSelectFork("sepolia");' in test.t.sol setUp()
